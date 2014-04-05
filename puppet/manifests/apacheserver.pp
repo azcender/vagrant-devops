@@ -3,10 +3,10 @@ node apacheserver {
 
   apache::vhost {'sumit.azcender.com':
     servername => 'sumit.azcender.com',
-    port       => '8080',
-    ip         => '192.168.168.10',
-    ip_based   => true,
-    docroot    => '/var/www/first',
+    proxy_pass => [
+      { 'path' => '/', 'url' => 'http://192.168.168.10:8080/' },
+    ],
+    docroot    => '/www',
   }
 
 #  class {'apache':
