@@ -1,22 +1,44 @@
 node apacheserver {
-  class {'apache': }
+
+  class { 'apache': }
 
   apache::vhost {'sumit.azcender.com':
     servername => 'sumit.azcender.com',
+    vhost_name => '*',
+    port       => 80,
     proxy_pass => [
       { 'path' => '/', 'url' => 'http://192.168.168.10:8080/' },
     ],
     docroot    => '/www',
   }
 
-#  class {'apache':
-#    default_vhost => false,
-#  }
+  apache::vhost {'tomcat.azcender.com':
+    servername => 'tomcat.azcender.com',
+    vhost_name => '*',
+    port       => 80,
+    proxy_pass => [
+      { 'path' => '/', 'url' => 'http://192.168.168.10:8080/' },
+    ],
+    docroot    => '/www',
+  }
 
-#  apache::vhost {'sumit.azcender.com':
-#    proxy_pass => [
-#      { 'path' => '/', 'url' => 'http://192.168.168.10:8080' },
-#    ],
-#    proxy_dest => 'http://192.168.168.10:8080',
-#  }
+    apache::vhost {'jenkins.azcender.com':
+    servername => 'jenkins.azcender.com',
+    vhost_name => '*',
+    port       => 80,
+    proxy_pass => [
+      { 'path' => '/', 'url' => 'http://192.168.168.20:8080/' },
+    ],
+    docroot    => '/www',
+  }
+
+    apache::vhost {'artifactory.azcender.com':
+    servername => 'artifactory.azcender.com',
+    vhost_name => '*',
+    port       => 80,
+    proxy_pass => [
+      { 'path' => '/', 'url' => 'http://192.168.168.40:8080/' },
+    ],
+    docroot    => '/www',
+  }
 }
