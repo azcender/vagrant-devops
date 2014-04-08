@@ -37,7 +37,7 @@ node apacheserver {
     vhost_name => '*',
     port       => 80,
     proxy_pass => [
-      { 'path' => '/', 'url' => 'http://192.168.168.40:8080/' },
+      { 'path' => '/', 'url' => 'http://192.168.168.40:8081/' },
     ],
     docroot    => '/www',
   }
