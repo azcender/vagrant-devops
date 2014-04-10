@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
     apache.vm.box = "FScentOS"
     apache.vm.hostname = "apacheserver.local"
     apache.vm.network :private_network, ip: "192.168.168.30"
-#    apache.vm.network :forwarded_port, guest: 80, host: 8000
+    apache.vm.network :forwarded_port, guest: 80, host: 8000
     apache.vm.provision :puppet do |puppet|
       puppet.module_path = "puppet/modules"
       puppet.manifests_path = "puppet/manifests"

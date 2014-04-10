@@ -16,3 +16,4 @@
 puppet/.tmp
 puppet/.librarian
 puppet/modules/*
+puppet/Puppetfile.*

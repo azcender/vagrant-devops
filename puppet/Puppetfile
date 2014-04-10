@@ -1,6 +1,4 @@
 forge 'http://forge.puppetlabs.com'
 
-mod "camptocamp/tomcat"
-mod "rtyler/jenkins"
-mod "puppetlabs/vcsrepo"
 mod "puppetlabs/apache"
+mod "palli/createrepo"
