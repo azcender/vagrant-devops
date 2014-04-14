@@ -17,4 +17,7 @@ node apacheserver {
   createrepo { 'snapshot':
     require => Apache::Vhost['yum-snapshot'],
   }
+
+#  $myhosts = hiera_array('hosts')
+  create_resources(host, hiera('hosts'))
 }

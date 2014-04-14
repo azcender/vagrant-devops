@@ -32,6 +32,8 @@ Vagrant.configure("2") do |config|
       puppet.manifests_path = "puppet/manifests"
       puppet.manifest_file = "apacheserver.pp"
       puppet.options = ["--pluginsync","--verbose"]
+      puppet.hiera_config_path = "puppet/hiera.yaml"
+      puppet.working_directory = "/vagrant/puppet"
     end
   end
 end
