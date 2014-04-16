@@ -3,3 +3,8 @@ forge 'http://forge.puppetlabs.com'
 mod "puppetlabs/apache"
 mod "palli/createrepo",
   :git => "git@github.com:azcender/puppet-createrepo.git"
+
+mod "azcender/profiles",
+  :git => "git@github.com:azcender/puppet-profiles.git"
+mod "azcender/roles",
+  :git => "git@github.com:azcender/puppet-roles.git"

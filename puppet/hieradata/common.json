@@ -1,13 +1,49 @@
 {
   "hosts": {
+    "tomcat.localhost" :
+      { "ensure"       : "present",
+        "ip"           : "192.168.1.100",
+        "host_aliases" : [
+          "staging.localhost", "jenkins.localhost", "artifactory.localhost"
+        ]
+      }
+  },
+
+  "profiles::reverse_proxy::proxies" : {
     "tomcat.azcender.com" :
-      { "ensure" : "present",
-        "ip" : "192.168.1.100" },
-    "staging.azcener.com" :
-      { "ensure" : "present",
-        "ip" : "192.168.1.105" }, 
+      { "vhost_name" : "*",
+        "port"       : "80",
+        "proxy_pass" : [
+          {"path" : "/", "url" : "http://dev.local:8080/" }
+        ],
+        "docroot" : "/www"
+      },
+
+    "staging.azcender.com" :
+      { "vhost_name" : "*",
+        "port"       : "80",
+        "proxy_pass" : [
+          {"path" : "/", "url" : "http://staging.local:8180/" }
+        ],
+        "docroot" : "/www"
+      },
+
     "jenkins.azcender.com" :
-      { "ensure" : "present",
-        "ip" : "192.168.1.110" }
+      { "vhost_name" : "*",
+        "port"       : "80",
+        "proxy_pass" : [
+          {"path" : "/", "url" : "http://jenkins.local:8280/" }
+        ],
+        "docroot" : "/www"
+      },
+
+    "artifactory.azcender.com" :
+      { "vhost_name" : "*",
+        "port"       : "80",
+        "proxy_pass" : [
+          {"path" : "/", "url" : "http://artifactory.local:8380/" }
+        ],
+        "docroot" : "/www"
+      }
   }
 }
