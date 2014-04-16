@@ -1,3 +1,3 @@
-node apacheserver {
+node devops {
   include roles::devops
 }
