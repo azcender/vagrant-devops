@@ -1,11 +1,26 @@
 {
   "hosts": {
-    "tomcat.localhost" :
+    "tomcat.azcender.com" :
       { "ensure"       : "present",
-        "ip"           : "192.168.1.100",
+        "ip"           : "192.168.168.10",
         "host_aliases" : [
-          "staging.localhost", "jenkins.localhost", "artifactory.localhost"
+          "sumit.azcender.com"
         ]
+      },
+
+    "staging.azcender.com" :
+      { "ensure"       : "present",
+        "ip"           : "192.168.168.50"
+      },
+
+    "artifactory.azcender.com" :
+      { "ensure"       : "present",
+        "ip"           : "192.168.168.40"
+      },
+
+    "jenkins.azcender.com" :
+      { "ensure"       : "present",
+        "ip"           : "192.168.168.20"
       }
   },
 
@@ -14,7 +29,16 @@
       { "vhost_name" : "*",
         "port"       : "80",
         "proxy_pass" : [
-          {"path" : "/", "url" : "http://dev.local:8080/" }
+          {"path" : "/", "url" : "http://tomcat.azcender.com:8080/" }
+        ],
+        "docroot" : "/www"
+      },
+
+    "sumit.azcender.com" :
+      { "vhost_name" : "*",
+        "port"       : "80",
+        "proxy_pass" : [
+          {"path" : "/", "url" : "http://sumit.azcender.com:8080/" }
         ],
         "docroot" : "/www"
       },
@@ -23,7 +47,7 @@
       { "vhost_name" : "*",
         "port"       : "80",
         "proxy_pass" : [
-          {"path" : "/", "url" : "http://staging.local:8180/" }
+          {"path" : "/", "url" : "http://staging.azcender.com:8080/" }
         ],
         "docroot" : "/www"
       },
@@ -32,7 +56,7 @@
       { "vhost_name" : "*",
         "port"       : "80",
         "proxy_pass" : [
-          {"path" : "/", "url" : "http://jenkins.local:8280/" }
+          {"path" : "/", "url" : "http://jenkins.azcender.com:8080/" }
         ],
         "docroot" : "/www"
       },
@@ -41,7 +65,7 @@
       { "vhost_name" : "*",
         "port"       : "80",
         "proxy_pass" : [
-          {"path" : "/", "url" : "http://artifactory.local:8380/" }
+          {"path" : "/", "url" : "http://artifactory.azcender.com:8081/" }
         ],
         "docroot" : "/www"
       }
