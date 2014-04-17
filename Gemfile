@@ -25,6 +25,4 @@ group :rake do
   gem 'rake'
   gem 'puppet-lint'
   gem 'puppetlabs_spec_helper'
-  gem 'gherkin'
-  gem 'cucumber'
 end
