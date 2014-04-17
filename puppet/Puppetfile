@@ -5,8 +5,6 @@ mod "camptocamp/tomcat"
 mod "maestrodev/wget"
 
 mod "puppetlabs/apache"
-mod "palli/createrepo",
-  :git => "git@github.com:azcender/puppet-createrepo.git"
 
 mod "rtyler/jenkins"
 
