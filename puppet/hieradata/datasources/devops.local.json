@@ -1,0 +1,28 @@
+{
+  "profiles::app_servers::datasources" : {
+     "app1" : {
+        "database_connector"  : "mysql",
+        "database_servername" : "mysql.database.local",
+        "database_port"       : "3306",
+        "database_username"   : "username",
+        "database_password"   : "super_secret1",
+        "database_service"    : "app1"
+     },
+     "app2" : {
+        "database_connector"  : "oracle",
+        "database_servername" : "oracle.database.local",
+        "database_port"       : "1521",
+        "database_username"   : "username",
+        "database_password"   : "super_secret2",
+        "database_service"    : "app2"
+     },
+     "app3" : {
+        "database_connector"  : "oracle",
+        "database_servername" : "oracle.database.local",
+        "database_port"       : "1522",
+        "database_username"   : "username",
+        "database_password"   : "super_secret3",
+        "database_service"    : "app3"
+     }
+  }
+}

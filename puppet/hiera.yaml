@@ -4,4 +4,5 @@
 :json:
   :datadir: /vagrant/puppet/hieradata
 :hierarchy:
+  - "datasources/%{::fqdn}"
   - common
