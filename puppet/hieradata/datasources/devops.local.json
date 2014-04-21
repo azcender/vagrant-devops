@@ -1,31 +1,31 @@
 {
   "profiles::app_servers::datasources" : {
      "DS0" : {
-        "tomcat_name"         : "Sample 1",
+        "tomcat_name"         : "dev",
         "database_connector"  : "mysql",
         "database_servername" : "mysql.database.local",
         "database_port"       : "3306",
-        "database_username"   : "username",
-        "database_password"   : "super_secret1",
+        "database_username"   : "username_ds0",
+        "database_password"   : "super_secret",
         "database_service"    : "app1"
      },
      "DS1" : {
-        "tomcat_name"         : "Sample 2",
+        "tomcat_name"         : "staging",
         "database_connector"  : "oracle",
         "database_servername" : "oracle.database.local",
         "database_port"       : "1521",
-        "database_username"   : "username",
-        "database_password"   : "super_secret2",
-        "database_service"    : "app2"
+        "database_username"   : "username_ds1",
+        "database_password"   : "super_secret",
+        "database_service"    : "app1"
      },
      "DS2" : {
-        "tomcat_name"         : "Sample 3",
+        "tomcat_name"         : "staging",
         "database_connector"  : "oracle",
         "database_servername" : "oracle.database.local",
         "database_port"       : "1522",
-        "database_username"   : "username",
-        "database_password"   : "super_secret3",
-        "database_service"    : "app3"
+        "database_username"   : "username_ds2",
+        "database_password"   : "super_secret",
+        "database_service"    : "app2"
      }
   }
 }
