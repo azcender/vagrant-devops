@@ -1,6 +1,7 @@
 {
   "profiles::app_servers::datasources" : {
-     "app1" : {
+     "DS0" : {
+        "tomcat_name"         : "Sample 1",
         "database_connector"  : "mysql",
         "database_servername" : "mysql.database.local",
         "database_port"       : "3306",
@@ -8,7 +9,8 @@
         "database_password"   : "super_secret1",
         "database_service"    : "app1"
      },
-     "app2" : {
+     "DS1" : {
+        "tomcat_name"         : "Sample 2",
         "database_connector"  : "oracle",
         "database_servername" : "oracle.database.local",
         "database_port"       : "1521",
@@ -16,7 +18,8 @@
         "database_password"   : "super_secret2",
         "database_service"    : "app2"
      },
-     "app3" : {
+     "DS2" : {
+        "tomcat_name"         : "Sample 3",
         "database_connector"  : "oracle",
         "database_servername" : "oracle.database.local",
         "database_port"       : "1522",
