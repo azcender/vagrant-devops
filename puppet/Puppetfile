@@ -1,6 +1,6 @@
 forge 'http://forge.puppetlabs.com'
 
-mod "camptocamp/tomcat"
+#mod "camptocamp/tomcat"
 
 mod "maestrodev/wget"
 
@@ -8,7 +8,11 @@ mod "puppetlabs/apache"
 
 mod "rtyler/jenkins"
 
+mod "prolixalias/tomcat",
+  :git => "git@github.com:prolixalias/puppet-tomcat.git"
+
 mod "azcender/profiles",
   :git => "https://github.com/azcender/puppet-profiles.git"
+
 mod "azcender/roles",
   :git => "https://github.com/azcender/puppet-roles.git"
