@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
     devops.vm.box = "FScentOS"
     devops.vm.hostname = "devops.local"
     devops.vm.network :private_network, ip: "192.168.168.100"
-    devops.vm.network :forwarded_port, guest: 80, host: 8000
+    devops.vm.network :forwarded_port, guest: 8080, host: 8000
     devops.vm.provision :puppet do |puppet|
       puppet.module_path = "puppet/modules"
       puppet.manifests_path = "puppet/manifests"
